@@ -18,7 +18,7 @@
             <asp:Label CssClass="col-xs-1" runat="server" Text="User: " AssociatedControlID="UserFullName"></asp:Label>
 
             <asp:Label CssClass="col-sm-1" ID="UserFullName" runat="server"></asp:Label>
-            <asp:DropDownList ID="employeeDDL" runat="server"></asp:DropDownList>
+           
 
             <asp:Label CssClass="col-sm-1" runat="server" Text="Job: " AssociatedControlID="JobID"></asp:Label>
 
@@ -46,7 +46,7 @@
                 DataValueField="StandardJobID" OnSelectedIndexChanged="PresetDDL_SelectedIndexChanged">
                 <asp:ListItem Value="0" Enabled="true" Selected="True">Select...</asp:ListItem>
             </asp:DropDownList>
-            <asp:Button CssClass="col-sm-1" ID="PresetButton" runat="server" Text="Select"  />
+            <asp:Button CssClass="col-sm-1" ID="PresetButton" runat="server" Text="Select" OnClick="PresetButton_Click"  />
 
             <asp:Label CssClass="col-sm-1" runat="server" Text="Coupon: " AssociatedControlID="CouponDDL"></asp:Label>
             <asp:DropDownList CssClass="col-sm-2" ID="CouponDDL" AppendDataBoundItems="true" runat="server" DataSourceID="CouponDDLODS" 

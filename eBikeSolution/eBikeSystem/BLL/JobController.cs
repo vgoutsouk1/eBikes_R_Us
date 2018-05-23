@@ -181,18 +181,24 @@ namespace eBikeSystem.BLL
         }
 
 
-        //public string PresetDescriptionHours(int presetid)
-        //{
-        //    using (var context = new eBikeContext())
-        //    {
-        //        var results = from x in context.StandardJobs
-        //                      where x.JobID.Equals(presetid)
-        //                      select x.Description;
+        public StandardJob GetPresetsById(int presetid)
+        {
+            using (var context = new eBikeContext())
+            {
+                //var results = from x in context.StandardJobs
+                //              where x.StandardJobID.Equals(presetid)
+                //              select new StandardJob
+                //              {
+                //                  StandardJobID = x.StandardJobID,
+                //                  Description = x.Description,
+                //                  StandardHours = x.StandardHours
+                //              };
 
+                var results = context.StandardJobs.SingleOrDefault(s => s.StandardJobID.Equals(presetid));
 
-        //        return results.ToString();
-        //    }
+                return results;
+            }
 
-        //}//eom
+        }//eom
     }
 }

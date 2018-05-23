@@ -35,10 +35,6 @@ public partial class WebSites_CurrentJob : System.Web.UI.Page
             JobController sysmgr = new JobController();
             int jobId = int.Parse(JobID.Text);
 
-            employeeDDL.DataSource = sysmgr.Get_Employees();
-            employeeDDL.DataBind();
-
-
             JobServiceGridView.DataSource = sysmgr.CurrentJobDetail(jobId);
             JobServiceGridView.DataBind();
 
@@ -46,14 +42,16 @@ public partial class WebSites_CurrentJob : System.Web.UI.Page
         }
     }
 
-    //protected void PresetButton_Click(object sender, EventArgs e)
-    //{
-    //    JobController sysmgr = new JobController();
-    //    int presetid = int.Parse(PresetDDL.SelectedValue);
+    protected void PresetButton_Click(object sender, EventArgs e)
+    {
+        JobController sysmgr = new JobController();
+        int presetid = int.Parse(PresetDDL.SelectedValue);
 
-    //    Description.Text = sysmgr.PresetDescriptionHours(presetid);
+        StandardJob job = sysmgr.GetPresetsById(presetid);
 
-    //}
+        Description.Text = job.Description;
+        Hours.Text = job.StandardHours.ToString();
+    }
 
     protected void AddServiceButton_Click(object sender, EventArgs e)
     {
