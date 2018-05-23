@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A4F31DF2-0B0A-4607-8A64-E84371BE10C1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>eBike.Data</RootNamespace>
+    <AssemblyName>eBike.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\eBikeWebsite\Bin\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DTOs\JobJobDetails.cs" />
+    <Compile Include="DTOs\JobPartDTO.cs" />
+    <Compile Include="DTOs\VendorPurchaseOrderDetailsDTO.cs" />
+    <Compile Include="Entities\Category.cs" />
+    <Compile Include="Entities\Coupon.cs" />
+    <Compile Include="Entities\Customer.cs" />
+    <Compile Include="Entities\Employee.cs" />
+    <Compile Include="Entities\Job.cs" />
+    <Compile Include="Entities\JobDetail.cs" />
+    <Compile Include="Entities\JobDetailPart.cs" />
+    <Compile Include="Entities\OnlineCustomer.cs" />
+    <Compile Include="Entities\Part.cs" />
+    <Compile Include="Entities\Position.cs" />
+    <Compile Include="Entities\PurchaseOrder.cs" />
+    <Compile Include="Entities\PurchaseOrderDetail.cs" />
+    <Compile Include="Entities\ReceiveOrder.cs" />
+    <Compile Include="Entities\ReceiveOrderDetail.cs" />
+    <Compile Include="Entities\ReturnedOrderDetail.cs" />
+    <Compile Include="Entities\Sale.cs" />
+    <Compile Include="Entities\SaleDetail.cs" />
+    <Compile Include="Entities\SaleRefund.cs" />
+    <Compile Include="Entities\SaleRefundDetail.cs" />
+    <Compile Include="Entities\Security\ApplicationUser.cs" />
+    <Compile Include="Entities\Security\RoleProfile.cs" />
+    <Compile Include="Entities\Security\SecurityRoles.cs" />
+    <Compile Include="Entities\Security\UserProfile.cs" />
+    <Compile Include="Entities\ShoppingCart.cs" />
+    <Compile Include="Entities\ShoppingCartItem.cs" />
+    <Compile Include="Entities\StandardJob.cs" />
+    <Compile Include="Entities\StandardJobPart.cs" />
+    <Compile Include="Entities\UnorderedPurchaseItemCart.cs" />
+    <Compile Include="Entities\Vendor.cs" />
+    <Compile Include="POCOs\customerPOCO.cs" />
+    <Compile Include="POCOs\FinalTotalPOCO.cs" />
+    <Compile Include="POCOs\NewReceiveOrderPOCO.cs" />
+    <Compile Include="POCOs\OutstandingOrdersPOCO.cs" />
+    <Compile Include="POCOs\PurchaseOrderDetailsPOCO.cs" />
+    <Compile Include="POCOs\PurchaseOrderTotalsPOCO.cs" />
+    <Compile Include="POCOs\PurchaseOrderPartsPOCO.cs" />
+    <Compile Include="POCOs\VendorListPOCO.cs" />
+    <Compile Include="POCOs\CategoryListPOCO.cs" />
+    <Compile Include="POCOs\EmployeeListPOCO.cs" />
+    <Compile Include="POCOs\JobListPoco.cs" />
+    <Compile Include="POCOs\PartsListPOCO.cs" />
+    <Compile Include="POCOs\RegisteredEmployeePOCO.cs" />
+    <Compile Include="POCOs\ShoppingCartListPOCO.cs" />
+    <Compile Include="POCOs\TotalPricePOCO.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
